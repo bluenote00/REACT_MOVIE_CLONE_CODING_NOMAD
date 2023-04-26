@@ -17,36 +17,26 @@
 
 <script type="text/babel">
     const root = document.getElementById("root");
-    const Title = () => (
-        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-        Hello I'm a title
-        </h3>
-    );
-    const Button = () => (
-        <button style={{
-        backgroundColor: "tomato",
-        }}
-        onClick={() => console.log("im clicked")}
-        >
-        Click me
-        </button>
-    );
-    // const container = React.createElement("div", null, [Title, Button]);
-    // 두가지 태그를 한꺼번에 생성함
+    let counter = 0;
+    function countUp() {
+        counter = counter + 1;
+        render(); // 아래 렌더링한것에서 결과물을 리렌더링함
+    }
     
-    //ReactDOM.render(span, root);
-    //ReactDOM.render(btn, root);
-    
+    function render() {
+        ReactDOM.render(<Container />, root); // 렌더링 함수
+    }
+
     const Container = () => (
     <div>
-        <Title />
-        <Button /> 
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={countUp}>Click me</button>
     </div>
     );
     // 소문자로 쓸 경우, JSX는 HTML 태그로 인식한다.
     // 그러나 대문자로 쓰게 되면 위의 const Button으로 인식한다.
     // 직접 만든 요소들은 전부 대문자로 시작해야한다.
 
-    ReactDOM.render(<Container />, root);
+    render();
 </script>
 </html>
