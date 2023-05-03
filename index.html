@@ -17,19 +17,20 @@
 
 <script type="text/babel">
     const root = document.getElementById("root");
-    function countUp(){
 
-    }
     
     function App() {
         const [counter, modifier] = React.useState(0);
         // const counter = data[0];
         // const modifier = data[1];
-        console.log(data); // 배열값이 뜬다 배열의 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
+        // console.log(data); // 배열값이 뜬다 배열의 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
+        const onClick = () => {
+            modifier(989879878798);
+        };
         return (
             <div>
                 <h3>Total clicks: {counter}</h3>
-                <button>Click me</button>
+                <button onClick={onClick}>Click me</button>
             </div>
         );
     }
