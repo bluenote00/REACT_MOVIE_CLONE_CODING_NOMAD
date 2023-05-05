@@ -20,12 +20,12 @@
 
     
     function App() {
-        const [counter, modifier] = React.useState(0);
+        const [counter, setCounter] = React.useState(0);
         // const counter = data[0];
         // const modifier = data[1];
         // console.log(data); // 배열값이 뜬다 배열의 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
         const onClick = () => {
-            modifier(989879878798);
+            setCounter(counter + 1);
         };
         return (
             <div>
@@ -35,6 +35,6 @@
         );
     }
     ReactDOM.render(<App />, root);
-
+    // 리액트는 어떤 부분이 업데이트 되었는지 파악 후 HTML에서 그 부분만 고친다
 </script>
 </html>
